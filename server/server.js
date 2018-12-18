@@ -27,10 +27,6 @@ io.on('connection', function (socket) {
 
 //function to make sure socket is still connected
 function heartbeat() {
-    clearTimeout(this.pingTimeout);
-    this.pingTimeout = setTimeout(() => {
-        this.terminate();
-    }, 30000 + 5000);
     ws.send('pong');
 }
 
@@ -39,7 +35,6 @@ let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@miniTicker');
 //!miniTicker@arr
 ws.on('open', () => {
     console.log('binance stream open');
-    heartbeat();
 });
 
 ws.on('ping', heartbeat);

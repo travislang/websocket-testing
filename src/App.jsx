@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import openSocket from 'socket.io-client';
 const socket = openSocket('http://localhost:3000');
 
-
-
 class App extends Component {
 
     componentDidMount() {
@@ -24,7 +22,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h3>Web Socket Streaming Data Test</h3>
-                <h5>BTC Price: <span id='price'>${this.props.reduxStore.btc.price}</span></h5>
+                <h5>BTC Price: <span id='price'>{this.props.reduxStore.btc.price}</span></h5>
                 <h5>Update time: <span id='time'>{this.props.reduxStore.btc.time}</span></h5>
             </div>
         );
