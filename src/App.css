@@ -18,3 +18,7 @@ span {
 #time {
     color: gray;
 }
+
+img {
+    opacity: .8;
+}
